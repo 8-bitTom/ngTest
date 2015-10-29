@@ -1,0 +1,41 @@
+<div>
+    <h1 class="text-center">Data Binding!</h1>
+
+    <div class="well well-lg">
+        <label for="slider1">Slider value: {{percentage}}</label>
+        <input type="range" id="slider1" min="0" max="100" step="1" ng-model="percentage">
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <pie-chart pd-config="{percentage: percentage, size: 100}"></pie-chart>
+        </div>
+        <div class="col-md-6">
+            <mp-info-bar mp-title="a line graph" mp-max="100" mp-base="10" mp-value="percentage"></mp-info-bar>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">Build your own 1-100 widget here</div>
+                <div class="panel-body">
+                    <p>{{percentage}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="well well-lg">
+        <label for="text1">Text Input</label>
+        <input type="text" id="text1" ng-model="text" class="fullWidth" placeholder="type some text">
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">Let's make a text Mirror! So whatever you write is backwards!</div>
+        <div class="panel-body" ng-bind-html="text | textMirror"></div>
+    </div>
+</div>

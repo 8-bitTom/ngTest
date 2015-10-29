@@ -1,0 +1,19 @@
+<div class="fullWidth">
+    <div class="well">
+        <h1 class="text-center">Todo List</h1>
+        <div class="input-group spacer" ng-show="editable">
+            <input type="text" ng-model="newItem" ui-keypress="{13:'addItem()'}" default="add a new task" class="form-control">
+
+            <div class="input-group-btn">
+                <button class="btn btn-primary" ng-click="addItem()">Add</button>
+            </div>
+        </div>
+        <div ng-repeat="item in toDoList" ng-class="{'alert-success strikethrough': item.done, 'alert-info': !item.done}" class="alert">
+            {{item.name}} | {{item.created | date: 'shortDate'}}
+            <input ng-if="editable" type="checkbox" ng-model="item.done" class="pull-right">
+        </div>
+        <div class="alert alert-warning" ng-if="toDoList.length == 0">
+            Add some things to do on the Todo List page!
+        </div>
+    </div>
+</div>

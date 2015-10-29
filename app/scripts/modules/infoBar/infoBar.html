@@ -1,0 +1,15 @@
+<div class="info-bar">
+  <div class="caption">{{title}}</div>
+  <div class="value"><span ng-class="{'over': overLimit}">{{curVal}}</span> of {{maxVal}}</div>
+  <div class="meterContainer">
+    <div class="meter">
+      <div class="bar" ng-style="barWidth" ng-class="{'over': overLimit}"></div>
+      <div class="segmentOverlay">
+        <div ng-repeat="a in baseUnits track by $index" class="segment" ng-style="segmentWidth"></div>
+      </div>
+    </div>
+    <div class="info" ng-style="fixer">
+      <div ng-style="unitWidth" ng-repeat="unit in processedUnits" ng-class="{'over': unit > curVal}">{{unit}}</div>
+    </div>
+  </div>
+</div>

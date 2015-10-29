@@ -1,0 +1,79 @@
+<div class="well col-xs-3 col-md-offset-4 calculator" ui-keydown="{8: 'deleteKey($event)'}" ng-keypress="keypressCallback($event)" tabindex="0">
+
+    <div class="calculatorInput prev" ng-show="!newInput">{{calcPrevious}}</div>
+    <div class="calculatorInput operator">{{currentOperation}}</div>
+    <div class="calculatorInput">{{calcInput}}</div>
+
+    <div class="row">
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="allClear()">AC</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="negFlip()">+/-</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="toPercent()">%</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-warn fullWidth extra" ng-click="setOperation('/')">&divide;</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="number('7')">7</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="number('8')">8</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="number('9')">9</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-warn fullWidth" ng-click="setOperation('*')">X</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="number('4')">4</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="number('5')">5</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="number('6')">6</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-warn fullWidth extra" ng-click="setOperation('-')">-</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="number('1')">1</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="number('2')">2</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="number('3')">3</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-warn fullWidth extra" ng-click="setOperation('+')">+</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <button class="btn btn-default fullWidth" ng-click="number('0')">0</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-default fullWidth" ng-click="decimal()">.</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-warn fullWidth extra" ng-click="calculate()">=</button>
+        </div>
+    </div>
+
+</div>

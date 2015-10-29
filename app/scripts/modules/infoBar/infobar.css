@@ -1,0 +1,77 @@
+.info-bar {
+    width: 100%;
+    color: #939393;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.info-bar .caption {
+    margin-bottom: .5em;
+    color: #939393;
+}
+
+.info-bar .value {
+    color: #0094b5;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: .5em;
+}
+
+.info-bar .value .over {
+    color: #f5a623;
+}
+
+.info-bar .meterContainer {
+    width: 100%;
+    margin-left: -5%;
+}
+
+.info-bar .meterContainer .meter {
+    height: 10px;
+    width: 90%;
+    position: relative;
+    margin: 5px 5%;
+    background: #c6c6c6;
+}
+
+.info-bar .meterContainer .bar {
+    width: 0px;
+    height: 10px;
+    background: #0094b5;
+    -webkit-transition: width 1s;
+    transition: width 1s;
+}
+
+.info-bar .meterContainer .bar.over {
+    background: #f5a623;
+}
+
+.info-bar .meterContainer .segmentOverlay {
+    position: absolute;
+    z-index: 20;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.info-bar .meterContainer .segmentOverlay .segment {
+    float: left;
+    height: 10px;
+    border-right: 1px solid white;
+}
+
+.info-bar .meterContainer .info {
+    margin: 0 auto;
+}
+
+.info-bar .meterContainer .info div {
+    float: left;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    color: #939393;
+    margin-bottom: 1.5em;
+}
+
+.info-bar .meterContainer .info div.over {
+    color: #0094b5;
+}

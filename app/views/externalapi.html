@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="well">
+        <h1>Search Ebay</h1>
+        <h5>Let's get the # of results working, as well as add the sellers zip code and a star if they're a top rated listing</h5>
+        <div>Top Rated: <i class="glyphicon glyphicon-star"></i></div>
+        <div>Not so much: <i class="glyphicon glyphicon-star-empty"></i></div>
+        <br>
+        <div class="input-group">
+            <input type="text" ng-model="search" ui-keypress="{13: 'searchFn($event)'}" placeholder="Search Ebay" class="form-control">
+            <div class="input-group-btn">
+                <button class="btn btn-primary" ng-click="searchFn()"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+        </div>
+    </div>
+    <div class="well well-sm" ng-if="results">
+        # Results
+    </div>
+    <div class="media" ng-repeat="item in results">
+        <div class="media-left">
+            <a ng-href="{{item.viewItemURL[0]}}" target="ebay">
+                <img class="media-object" ng-src="{{item.galleryURL[0]}}" width="150px">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">{{item.title[0]}}</h4>
+            <dl class="dl-horizontal">
+                <dt>Price</dt>
+                <dd>
+                    {{item.sellingStatus[0].currentPrice[0]['__value__']}} {{item.sellingStatus[0].currentPrice[0]['@currencyId']}}
+                    <span class="text-success" ng-if="item.listingInfo[0].buyItNowAvailable[0]">Buy it now!</span>
+                </dd>
+                <dt>Start Time</dt>
+                <dd>{{item.listingInfo[0].startTime[0] | date: 'shortDate'}}</dd>
+                <dt>End Time</dt>
+                <dd>{{item.listingInfo[0].endTime[0] | date: 'shortDate'}}</dd>
+            </dl>
+        </div>
+    </div>
+</div>
