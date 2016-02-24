@@ -9,8 +9,8 @@ version 0.11.1.
 * [Install Node](https://nodejs.org/en/download/)
 
 * Install grunt
-  `$npm install -g grunt`
-  `npm install -g grunt-cli`
+  - `$npm install -g grunt`
+  - `$npm install -g grunt-cli`
 
 
 if you have node and bower installed:
